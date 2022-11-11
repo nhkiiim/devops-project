@@ -1,0 +1,12 @@
+version: "3" 
+services: 
+  app: 
+    build: .
+    image: ${DOCKER_USER_ID}/vue 
+  production: 
+    image: ${DOCKER_USER_ID}/vue:${BUILD_NUMBER} 
+    volumes: 
+      - .:/app
+    command: npm run serve
+    ports: 
+      - 3000:3000

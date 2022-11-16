@@ -21,7 +21,7 @@ __추가 목표__
 
 ### 02. 개요
 
-<img src = "ss.jpg">
+<img width="1437" alt="스크린샷 2022-08-30 오후 4 19 19" src="https://user-images.githubusercontent.com/59560592/202055097-78cf5138-7988-4f15-9cc7-11f65989096c.png">
 
 - 소스코드 변경 시 GitHub가 Webhook으로 젠킨스 호출
 - 젠킨스에서 도커 이미지 빌드 후 push

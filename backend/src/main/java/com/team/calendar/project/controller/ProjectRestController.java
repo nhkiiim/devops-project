@@ -1,4 +1,4 @@
-package com.team.calendar.project;
+package com.team.calendar.project.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

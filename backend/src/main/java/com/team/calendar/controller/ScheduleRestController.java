@@ -1,12 +1,10 @@
 package com.team.calendar.controller;
 
+import com.team.calendar.dto.ScheduleListReqDto;
 import com.team.calendar.dto.ScheduleListResDto;
 import com.team.calendar.service.ScheduleService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/schedule")
@@ -21,17 +19,17 @@ public class ScheduleRestController {
         );
     }
 
-    @GetMapping("{projectSeq}")
-    public ScheduleListResDto getScheduleListByProject(@PathVariable int projectSeq){
+    @PostMapping("project")
+    public ScheduleListResDto getScheduleListByProject(@RequestBody ScheduleListReqDto scheduleListReqDto){
         return new ScheduleListResDto(
-                scheduleService.getScheduleListByProjectSeq(projectSeq)
+                scheduleService.getScheduleListByProjectSeq(scheduleListReqDto.getProjectSeq())
         );
     }
 
-    @GetMapping("{memberName}")
-    public ScheduleListResDto getScheduleListByMember(@PathVariable String memberName){
+    @PostMapping("member")
+    public ScheduleListResDto getScheduleListByMember(@RequestBody ScheduleListReqDto scheduleListReqDto){
         return new ScheduleListResDto(
-                scheduleService.getScheduleListByMemberName(memberName)
+                scheduleService.getScheduleListByMemberName(scheduleListReqDto.getMemberName())
         );
     }
 

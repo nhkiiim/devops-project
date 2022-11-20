@@ -14,7 +14,7 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Schedule extends BaseEntity {
-    int memberSeq;
+    String memberName;
     int projectSeq;
     String offDt;
     String homeDt;

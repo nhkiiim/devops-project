@@ -1,6 +1,5 @@
 package com.team.calendar.service;
 
-import com.team.calendar.domain.Member;
 import com.team.calendar.domain.Schedule;
 import com.team.calendar.repository.MemberRepository;
 import com.team.calendar.repository.ScheduleRepository;
@@ -27,7 +26,6 @@ public class ScheduleServiceImpl implements ScheduleService{
 
     @Override
     public List<Schedule> getScheduleListByMemberName(String memberName) {
-        int memberSeq = memberRepository.findByMemberName(memberName).getSeq();
-        return scheduleRepository.findAllByMemberSeq(memberName);
+        return scheduleRepository.findAllByMemberName(memberName);
     }
 }

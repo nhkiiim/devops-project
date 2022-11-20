@@ -10,6 +10,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ScheduleListReqDto {
-   int projectSeq;
+   String projectName;
    String memberName;
 }

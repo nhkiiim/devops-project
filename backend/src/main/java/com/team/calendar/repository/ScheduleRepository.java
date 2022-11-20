@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Integer> {
     List<Schedule> findAll();
-    List<Schedule> findAllByProjectSeq(int projectSeq);
+    List<Schedule> findAllByProjectName(String projectName);
     List<Schedule> findAllByMemberName(String memberName);
 }

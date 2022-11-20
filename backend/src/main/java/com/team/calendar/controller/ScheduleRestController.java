@@ -21,9 +21,7 @@ public class ScheduleRestController {
 
     @PostMapping("project")
     public ScheduleListResDto getScheduleListByProject(@RequestBody ScheduleListReqDto scheduleListReqDto){
-        return new ScheduleListResDto(
-                scheduleService.getScheduleListByProjectSeq(scheduleListReqDto.getProjectSeq())
-        );
+        return scheduleService.getScheduleListByProjectName(scheduleListReqDto.getProjectName());
     }
 
     @PostMapping("member")

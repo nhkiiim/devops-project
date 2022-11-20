@@ -1,4 +1,4 @@
-package com.team.calendar.common;
+package com.team.calendar.common.domain;
 
 import lombok.Getter;
 import lombok.Setter;

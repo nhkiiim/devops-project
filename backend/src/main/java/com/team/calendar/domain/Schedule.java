@@ -1,6 +1,6 @@
 package com.team.calendar.domain;
 
-import com.team.calendar.common.BaseEntity;
+import com.team.calendar.common.domain.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 public class Schedule extends BaseEntity {
     String memberName;
-    int projectSeq;
+    String projectName;
     String offDt;
     String homeDt;
 }

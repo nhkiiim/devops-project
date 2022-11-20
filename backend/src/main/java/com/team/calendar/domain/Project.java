@@ -1,6 +1,6 @@
 package com.team.calendar.domain;
 
-import com.team.calendar.common.BaseEntity;
+import com.team.calendar.common.domain.BaseEntity;
 import lombok.*;
 
 import javax.persistence.Entity;

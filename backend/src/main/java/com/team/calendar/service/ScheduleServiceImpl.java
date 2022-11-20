@@ -1,6 +1,7 @@
 package com.team.calendar.service;
 
 import com.team.calendar.domain.Schedule;
+import com.team.calendar.dto.ScheduleListResDto;
 import com.team.calendar.repository.MemberRepository;
 import com.team.calendar.repository.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,8 +21,11 @@ public class ScheduleServiceImpl implements ScheduleService{
     }
 
     @Override
-    public List<Schedule> getScheduleListByProjectSeq(int projectSeq) {
-        return scheduleRepository.findAllByProjectSeq(projectSeq);
+    public ScheduleListResDto getScheduleListByProjectName(String projectName) {
+        ScheduleListResDto scheduleListResDto = new ScheduleListResDto();
+        if(projectName==null || projectName.equals("전체")) scheduleListResDto.setScheduleList(scheduleRepository.findAll());
+        else scheduleListResDto.setScheduleList(scheduleRepository.findAllByProjectName(projectName));
+        return scheduleListResDto;
     }
 
     @Override

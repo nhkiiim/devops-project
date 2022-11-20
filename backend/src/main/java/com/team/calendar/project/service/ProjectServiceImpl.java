@@ -20,6 +20,6 @@ public class ProjectServiceImpl implements ProjectService{
 
     @Override
     public List<Project> getProjectList() {
-        return projectRepository.findProject();
+        return projectRepository.findAll();
     }
 }

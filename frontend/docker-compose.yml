@@ -1,11 +1,13 @@
 version: "3"
 services:
   app:
-    container_name: web
-    build:
+    container_name: front-app
+    build: 
       context: .
-      dockerfile: Dockerfile
+    image: ${DOCKER_USER_ID}/devops-calendar
+  production:
+    image: ${DOCKER_USER_ID}/devops-calendar:${BUILD_NUMBER}
     ports:
         - 3000:3000
-    volumes:
+    volumes: 
         - .:/app
